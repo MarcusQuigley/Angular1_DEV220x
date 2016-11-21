@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="labModule" >
+
+<head>
+    <title>Angular Fundamentals</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+</head>
+
+<body  ng-controller="labMenuController">
+    <div class="container">
+        <h1>Tony's Pizza</h1>
+        <h1>{{model.title}}</h1>
+        <h1>{{model.cheese}}</h1>
+         <div>
+            <label>
+                <input type="radio" name="dishType" ng-click="changeMenuItem('Cheese Pizza','0.99')"  />
+                Cheese Pizza
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <input type="radio" name="dishType"  ng-click="changeMenuItem('Pepperoni Pizza','5.99')"/>
+                Pepperoni Pizza
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="radio" name="dishType" ng-click="changeMenuItem('Margherita Pizza','8.99')" />
+                Margherita Pizza
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="radio" name="dishType" ng-click="changeMenuItem('BBQ Pizza','15.99')"/>
+                BBQ Pizza
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="radio" name="dishType" ng-click="changeMenuItem('Combo Pizza','25.99')"/>
+                Combo Pizza
+            </label>
+        </div>
+ 
+        <div>
+            <h2>Selected Item</h2>
+            <pre>{{model.mainDish.name}}</pre>
+        </div>
+
+        <div>
+            <h2>Special Instructions</h2>
+            <textarea class="form-control" ng-model="model.Instructions"></textarea>
+        </div>
+
+        <div>
+            <h2>Order Summary</h2>
+            <pre>{{model.mainDish.name}} {{model.mainDish.price}} - {{model.Instructions}}</pre>
+        </div>
+        
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="./app/app.js"></script>
+    <script src="./app/menuController.js"></script>
+</body>
+
+</html>
